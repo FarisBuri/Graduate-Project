@@ -1,0 +1,1446 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="IPA_Coffee.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>IPA Coffee</title>
+
+    <!-- Favicon-->
+   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon0/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon0/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Font Awesome -->
+    <link href="lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    
+    <!-- Nomrlize -->
+    <link href="CSS_/normlize.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,600;1,200;1,300;1,700&display=swap"
+        rel="stylesheet"> -->
+
+    
+    <!-- Main CSS -->
+ 
+
+    <style>
+        /* Start Global Variable */
+
+:root {
+    --main-color: #654135;
+    --padding: 60px;
+    --secondly-color: #8d6e63;
+    --third-color: #704b3d;
+    --main-transition: .3s;
+}
+
+/* End Global Variable */
+
+
+/* Start Component */
+
+/* End Component */
+
+
+/* Start Global CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-style: italic;
+    letter-spacing: 1px;
+    /*background-color: #f6f6f6;*/
+    /* height: 2000px; */
+    /* position: relative; */
+}
+[type="submit"],
+[type="button"],
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+::selection {
+    background-color: var(--main-color);
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #efefef;
+}
+
+::-webkit-scrollbar-thumb {
+        border-radius: 0 0 5px 5px;
+    background-image: linear-gradient(to bottom, var(--main-color), #daae68);
+}
+
+
+.main-title {
+  font-weight: bold;
+  font-size: 27px;
+  border: 2px solid var(--main-color);
+  width: fit-content;
+  padding: 8px 20px;
+  margin: 0 auto;
+  margin: 0px auto 65px;
+  border-radius: 6px;
+  color: var(--main-color);
+  position: relative;
+  transition: var(--main-transition);
+  z-index: 3;
+}
+.main-title:hover {
+  transition-delay: 0.5s;
+  color: white;
+  border: 2px solid transparent;
+}
+.main-title::before,
+.main-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--main-color);
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+}
+
+.main-title::before {
+  left: -35px;
+}
+.main-title::after {
+  right: -35px;
+}
+
+.main-title:hover::before {
+  animation: moveLeft 0.5s linear forwards;
+  z-index: -1;
+}
+.main-title:hover::after {
+  animation: moveRight 0.5s linear forwards;
+  z-index: -1;
+}
+
+ .main-title2 {
+                background-color: white;
+                width: 100%;
+                overflow: hidden;
+                border: none;
+                text-align: center;
+                padding: 15px;
+        }
+.main-title2.main-title {
+    border: none;
+        margin-bottom: 15px;
+            
+}
+
+.sr {
+    position: relative;
+}
+.sr:before {
+content: "SR";
+    position: absolute;
+    right: 4px;
+    bottom: 12px;
+    font-size: 9px;
+    color: #4caf50;
+    font-weight: bold;
+
+}
+
+@keyframes moveLeft {
+  50% {
+    width: 17px;
+    height: 17px;
+    left: 0;
+  }
+  100% {
+    border-radius: 6px;
+    left: 0;
+    width: 60%;
+    height: 100%;
+  }
+}
+@keyframes moveRight {
+  50% {
+    width: 17px;
+    height: 17px;
+    right: 0;
+  }
+  100% {
+    border-radius: 6px;
+    right: 0;
+    width: 60%;
+    height: 100%;
+  }
+}
+
+.container {
+    padding: 0 var(--padding);
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 950px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Global CSS */
+
+/* Start Header */
+
+header {
+  padding: 30px 0;
+  background-color: white;
+  position: relative;
+      box-shadow: 0 2px 15px #eee;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  header .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+header .container .logo {
+  color: var(--main-color);
+  font-size: 20px;
+  display: flex;
+}
+
+header .container .logo a {
+  color: var(--main-color);
+  position: relative;
+  top: 5px;
+}
+header .container .logo .coffee {
+  font-size: 40px;
+  margin-right: 15px;
+}
+
+header .container .links {
+  display: flex;
+  gap: 15px;
+}
+header .container .links li {
+}
+header .container .links li a,
+header .container .links li [type="submit"] {
+  height: 40px;
+  color: var(--main-color);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  padding: 0 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  /* min-width: 85px; */
+}
+header .container .links li [type="submit"]:hover {
+    font-weight: bold;
+}
+header .container .links li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-color);
+  transition: var(--main-transition);
+}
+header .container .links li a:hover::before {
+  left: 0;
+}
+
+/* header .container .links li:last-child:hover .mega, */
+.open-mega {
+  opacity: 1;
+  z-index: 100;
+  top: calc(100% + 2px);
+}
+
+header .container .mega {
+  position: absolute;
+  left: 0;
+  padding: 30px 0;
+  background-color: rgb(255, 254, 254);
+  width: 100%;
+  border-bottom: 3px solid var(--main-color);
+  display: flex;
+  justify-content: space-around;
+  /* gap: 40px; */
+  transition: top var(--main-transition), opacity var(--main-transition);
+}
+.close-mega {
+  top: calc(100% + 50px);
+  opacity: 0;
+  z-index: -1;
+}
+
+@media (max-width: 400px) {
+  header .container .mega {
+    flex-direction: column;
+  }
+}
+header .container .mega .image {
+  margin: auto 0 auto 3px;
+}
+header .container .mega .image img {
+  width: 450px;
+  height: 250px;
+      border-radius: 100px 0 100px 0;
+  transition: var(--main-transition);
+}
+
+@media (max-width: 991px) {
+  header .container .mega .image img {
+    width: 250px;
+  }
+}
+@media (max-width: 767px) {
+  header .container .mega .image img {
+    display: none;
+  }
+}
+
+header .container .sub-links {
+  margin: auto 40px;
+  flex-grow: 1;
+}
+header .container .sub-links li:not(:last-of-type) {
+  border-bottom: 1px solid #d4d4d4;
+}
+@media (max-width: 400px) {
+  header .container .sub-links:first-of-type li:last-of-type {
+    border-bottom: 1px solid #d4d4d4;
+  }
+}
+header .container .sub-links li a {
+  padding: 40px 10px;
+  min-width: 180px;
+  font-weight: bold;
+}
+
+header .container .sub-links li a:hover {
+}
+
+header .container .sub-links li i {
+  color: #ffc107;
+  margin-right: 7px;
+  font-size: 25px;
+}
+
+header .container .sub-links li {
+  position: relative;
+}
+                    
+                   
+li:empty {
+display: none;
+}
+.underline:empty {
+display: none;
+}
+
+.hide {
+display: none;
+}
+.hide_emp {
+    display: none;
+}
+
+                
+
+                     
+
+                    
+                    
+
+/* End Header */
+
+.up {
+  background-color: var(--main-color);
+  color: white;
+  padding: 5px;
+  position: fixed;
+  z-index: 100;
+  bottom: 10px;
+  right: -40px;
+  border-radius: 5px;
+  transform: rotate(180deg);
+  transition: var(--main-transition);
+  cursor: pointer;
+}
+.up.show {
+  right: 10px;
+  transform: rotate(0deg);
+}
+.up i {
+}
+
+/* Start Settings */
+
+.settings {
+  position: fixed;
+  height: 100%;
+  width: 225px;
+  background-color: white;
+  left: -225px;
+  top: 0;
+  z-index: 200;
+  border: 2px solid #ccc;
+  transition: 1s;
+}
+
+.settings .icon {
+  position: absolute;
+  right: -35px;
+  top: 50%;
+  transform: translateY(-59%);
+  color: var(--main-color);
+  background-color: #ffffff;
+  padding: 5px 0;
+  width: 33px;
+  text-align: center;
+  border-radius: 0 5px 5px 0;
+  border: 2px solid #e4e4e4;
+  border-left: none;
+  cursor: pointer;
+}
+.settings .icon i {
+  color: var(--main-color);
+}
+.left {
+  left: 0;
+}
+.settings .image {
+    border-radius: 50%;
+    width: 125px;
+    height: 125px;
+    display: block;
+    margin: 25px auto;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+
+}
+.settings .image::before {
+    content:"";
+    transition: .7s;
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+.settings .image:hover::before {
+    background-image: url(image1/add1.png);
+    background-size: cover;
+    width: 30%;
+    height: 30%;
+
+}
+.settings .image::after {
+    content:"";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: .7s;
+    z-index: 3;
+}
+.settings .image:hover:after {
+    
+    background-color: #0000001f;
+}
+.settings .image img {
+      border-radius: 50%;
+  width: 125px;
+    height: 125px;
+}
+.settings .names {
+  display: flex;
+  justify-content: center;
+}
+.settings h5 {
+  margin: 0 7px 0px 0;
+  font-size: 19px;
+  font-weight: normal;
+  text-transform: capitalize;
+}
+.settings .come {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+.settings .come li {
+  border-bottom: 2px solid #d4d4d4;
+  padding: 33px 0 10px 3px;
+  color: #777;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.settings .come li:last-of-type {
+  border-bottom: none;
+}
+.settings .come li::before {
+  content: "";
+  position: absolute;
+  left: -100%;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-color);
+  transition: var(--main-transition);
+}
+.settings .come li:last-of-type:before {
+  height: 0;
+}
+.settings .come li:hover::before {
+  left: 0;
+}
+.settings .come li:hover {
+  color: black;
+  /* font-weight: bold; */
+}
+.settings .come .btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.settings .come li button {
+  background-color: transparent;
+  width: 40%;
+  padding: 4px 0;
+  font-size: 14px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  opacity: 0.7;
+  margin-top: 20px;
+}
+.settings .come li .open {
+  opacity: 1;
+}
+.settings .come li .passive {
+}
+.settings .come li .rest {
+  width: 88%;
+  background-color: red;
+}
+.settings .come li .rest:active {
+  box-shadow: 0 2px 15px #aaa;
+}
+/* End Settings */
+
+/* Start Settings Extend */
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #0000003b;
+  position: fixed;
+  top: 0%;
+  left: 0;
+  z-index: 1000;
+  transition: 1s;
+}
+
+.change {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  border-radius: 6px;
+  border-top-left-radius: 0;
+  border: 2px solid var(--main-color);
+  transition: 1s;
+  position: relative;
+}
+.change-password {
+  height: 300px;
+}
+.change-username {
+  height: 200px;
+}
+.change-avatar {
+    height: 200px;
+}
+
+.change .rem {
+  content: "X";
+  width: 40px;
+  height: 40px;
+  background-color: var(--main-color);
+  color: white;
+  position: absolute;
+  border-radius: 50%;
+  right: -16px;
+  top: -16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.hide {
+  z-index: -1;
+  opacity: 0;
+}
+.hide0,
+.hide1,
+.hide2,
+.hide3,
+.hide_admin{
+  display: none;
+}
+.change .change-name {
+  text-align: center;
+}
+.change .change-name h4 {
+  color: var(--main-color);
+  margin: 19px auto 27px 0;
+}
+.change .change-name input:not([type="submit"]) {
+  padding: 8px 0;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  border: none;
+  border-bottom: 2px solid var(--main-color);
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--main-color);
+}
+.change .change-name input:not([type="submit"]):focus {
+  outline: none;
+}
+.change .change-name [type="submit"] {
+  margin-top: 19px;
+  padding: 6px 30px;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.error {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--main-color);
+  box-shadow: 0 2px 15px #d4d4d4;
+  color: white;
+  width: 275px;
+  text-align: center;
+  padding: 24px;
+  border-radius: 0 0 5px 5px;
+  font-weight: bold;
+  transition: 1s;
+  z-index: 1000;
+}
+/* End Settings Extend */
+
+.change_img {
+        background: var(--main-color);
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.change_img:active {
+    box-shadow: 0 2px solid var(--main-color);
+}
+
+.passwordCom {
+        position: absolute;
+    background-color: #e91e63;
+    color: white;
+    padding: 12px;
+    border-radius: 23px 51px 0 0px;
+    left: 0%;
+    top: -61px;
+    width: 90%;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+
+/* Start Footer*/
+        .footer {
+            padding: 25px 0;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            /* font-weight: 700; */
+            /* position: absolute;
+          bottom: 0;
+          width: 100%; */
+            text-transform: capitalize;
+            
+        }
+
+            .footer .fa-graduation-cap {
+                font-size: 30px;
+                margin-right: 20px;
+            }
+
+            .footer .fa-university {
+                font-size: 30px;
+                margin-left: 20px;
+            }
+
+            .footer span a {
+                /* color: var(--secondly-color); */
+                font-weight: 700;
+                color: white;
+            }
+/* End footer */
+
+
+/* Loading */
+
+#overlay {
+    position: fixed;
+    z-index: 99;
+    /*top: 10px;
+    left: 0px;*/
+background-color: #fcfcfc;
+    width: 100%;
+    height: 100%;
+    /*filter: alpha(opacity=80);*/
+    /*opacity: 0.80;*/
+    /*-noz-opacity: 0.80;*/
+}
+
+#theprogress {
+    /*background-color: aliceblue;*/
+    width: 50px;
+    height: 24px;
+    text-align: center;
+    /*filter: alpha(Opacity=100);*/
+    /*opacity: 1;*/
+    /*-noz-opacity: 1;*/
+}
+
+#modalprogress {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    margin: -40px 0 0 55px;
+    color: white;
+}
+
+body > #modalprogress {
+    position: fixed;
+}
+.loading {
+  box-sizing: border-box;
+  width: 50px;
+  /* background-color: red; */
+  height: 50px;
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 4px solid #03a9f4;
+  border-right-color: transparent;
+  transform: rotate(0deg);
+  animation: Circle 1.7s linear infinite;
+}
+
+.loading::before,
+.loading::after {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.loading::before {
+  transform: scale(2);
+  border: 2px solid#ffc107;
+  border-left-color: transparent;
+}
+.loading::after {
+  transform: scale(3);
+  border: 2px solid #795548;
+  border-bottom-color: transparent;
+}
+.load {
+  position: fixed;
+  font-size: 50px;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  top: 25%;
+  margin-left: 37px;
+  color: white;
+  /* transform: translateY(-50%); */
+}
+
+@keyframes Circle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.icons {
+    margin-top: 10px;
+    
+}
+.icons ul {
+    display: flex;
+    justify-content: center;
+}
+
+.icons ul li {
+    width: 40px;
+
+}
+.icons a {
+}
+.icons i {
+    color: white;
+    transition: .2s;
+    font-size: 20px;
+}
+.icons i:hover {
+    font-size: 40px;
+
+}
+
+
+
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    
+    <form id="form1" runat="server" >
+        
+
+         <!-- Start Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-coffee coffee"></i>
+                <h3><a href="Home.aspx">IPA Coffee</a></h3>
+            </div>
+
+        
+            <ul class="links">
+               
+                <li class="show">
+                    <a href="Home.aspx">Home</a>
+                    <span class="home"></span>
+                </li>
+                <li class="show">
+                    <a href="Drink.aspx">Drinks</a>
+                    <span class="drink"></span>
+                </li>
+                 <li class="hide_admin">
+                    <a href="Contact_Us.aspx">Client Messages</a>
+                    <span class="contact"></span>
+                </li>
+
+                 <li class="hide_admin">
+                    <a href="Create_Employee.aspx">Create Employee</a>
+                    <span class="emp"></span>
+                </li>
+                <li class="hide_admin">
+                    <a href="Create_Order.aspx">Create Order</a>
+                    <span class="create_ord"></span>
+                </li>
+
+                 <li class="hide_emp">
+                    <a href="Employee.aspx">Orders</a>
+                    <span class="emp_page"></span>
+                </li>
+
+
+                <li>
+                   
+                    <asp:HyperLink ID="sign_up" CssClass="btn" runat="server" href="Sign_Up.aspx">Sign In</asp:HyperLink>
+                    <span class="sign"></span>
+                    <asp:Button ID="sign_out" CssClass="btn" runat="server" style="width: 84px;" Visible="false" Text="Sign Out" OnClick="sign_out_Click"/>
+
+                </li>
+
+                <li class="show">
+                    <a href="#">Other Links</a>
+                    <div class="mega close-mega " >
+                        <div class="image">
+                            <img src="image1/cohee.bmp" alt="" > 
+                        </div>
+                        <ul class="sub-links" >
+                            
+                              <li>
+                                
+                                <a href="Home.aspx#service">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Service
+                                </a>
+                                  <span></span>
+                            </li>
+                            
+                            <li style="display: none">
+                                
+                                <a href="Home.aspx#coffee">
+                                    <i class="fas fa-mug-hot"></i>
+                                    Coffee 
+                                </a>
+                                <span></span>
+                            </li>
+                            <li>
+                                
+                                <a href="Home.aspx#awesome">
+                                    <i class="far fa-laugh-beam"></i>
+                                    Our Awesome Status
+                                </a>
+                                <span></span>
+                            </li>
+                            <li>
+                                
+                                <a href="Home.aspx#contact">
+                                    <i class="far fa-paper-plane"></i>
+                                    Contact us
+                                </a>
+                                <span></span>
+                            </li>
+                            <li>
+                                
+                                <a href="Home.aspx#Testimonials">
+                                    <i class="fas fa-comments"></i>
+                                    Testimonials
+                                </a>
+                                <span></span>
+                            </li>
+                             <li>
+                                
+                                <a href="Student.aspx">
+                                    <i class="fas fa-user-graduate"></i>
+                                    In Case You're A Student :)
+                                </a>
+                                <span></span>
+                            </li>
+                        </ul>
+                        <ul class="sub-links">
+                            
+                            <li>
+                                
+                                <a href="Cart.aspx">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Shopping Bag
+                                </a>
+                                <span></span>
+                            </li>
+                            <li>
+                                
+                                <a href="Orders.aspx">
+                                    <i class="fas fa-scroll"></i>
+                                    Orders
+                                </a>
+                                <span></span>
+                            </li>
+                            <li>
+                                
+                                <a href="#" class="open-settings">
+                                    <i class="fas fa-sliders-h"></i>
+                                    Settings
+                                </a>
+                                <span></span>
+                            </li>
+                            <li>
+                                
+                                <a href="Home.aspx#memory">
+                                    <i class="fas fa-photo-video"></i>
+                                    Some Of My Memory  
+                                </a>
+                                <span></span>
+                            </li>
+                            <li>
+                                
+                                <a href="Sign_In.aspx">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    Sign Up
+                                </a>
+                                <span></span>
+                            </li>
+                            
+                        </ul>
+                        
+                    </div>
+                </li>
+                
+            </ul>
+                   
+
+            
+            <script src="javascript/align.js"></script>
+        </div>
+    </header>
+    <!-- End Header -->
+        
+            <!-- Start Up -->
+
+    <div class="up">
+        
+    <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- End Up -->
+
+    <!-- Start Settings -->
+
+    <div class="settings">
+        <div class="icon">
+            <i class="fas fa-cog"></i>
+        </div>
+        <asp:FileUpload ID="file_upload_picture" runat="server" style="display: none;" on/>
+         <label id="lbl_pictrue"<%-- for="file_upload_picture"--%> style="cursor: pointer">
+           <div class="image">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/image1/avatar2.bmp" Visible="false"/>
+                   <asp:Image ID="Image2" runat="server" ImageUrl="~/image1/avatar2.bmp" Visible="true"/>
+           </div>
+       </label>
+        <%--<asp:Button runat="server" ID="btn5" Text="Change Image" OnClick="btn5_Click" CssClass="change_img hide_img"/>--%>
+        <div class="names">
+            <h5><asp:Label runat="server" ID="first_name">Son</asp:Label></h5>
+            <h5><asp:Label runat="server" ID="last_name">Father 😅 </asp:Label></h5>
+        </div>
+        
+        <ul class="come">
+            <li>Change Names</li>
+            <li>Change Username</li>
+            <li>Change Password</li>
+            <li  class="ClickChangeAvatar">Change Avatar</li>
+            <li>
+                Enable Image Move: 
+                <div class="btn">
+                    <button class="active open">Enable</button>
+                <button class="passive">Disabled</button>
+                </div>
+            </li>
+            <li>
+                Enable Settings Icon: 
+                <div class="btn">
+                    <button class="show">Show</button>
+                    <button class="hide_s open">Hide</button>
+                </div>
+            </li>
+            <li >
+                Rest All Settings :
+                <div class="btn">
+                    <button class="rest">Rest</button>
+                </div>
+             
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- End Settings -->
+
+    <!-- Start Settigns Extend -->
+
+    <div class="overlay hide">
+        
+        <div class="change hide">
+            <span class="rem">X</span>
+            <div class="change-name hide0">
+                <h4>Change Name : </h4>
+               
+                <asp:TextBox runat="server" ID="txt_first" placeholder="First Name" />
+                <asp:TextBox runat="server" ID="txt_last" placeholder="Last Name" />
+                <asp:Button runat="server" ID="btn_change" Text="Change"  CommandName="names" OnCommand="MakeChange_Command"/>
+            </div>
+            <div class="change-name hide1">
+                <h4>Change Username : </h4>
+                <!-- <input type="text" placeholder="First Name"> -->
+                  <asp:TextBox runat="server" ID="txt_username" placeholder="Username"/>
+                    <asp:Label runat="server" ID="lbl_found" CssClass="passwordCom" Visible="false">username is already taken</asp:Label>
+                     <asp:Button runat="server" ID="btn_chnage1" Text="Change" CommandName="username" OnCommand="MakeChange_Command" />
+            </div>
+            <div class="change-name hide2">
+                <h4>Password: </h4>
+                 <asp:CompareValidator ID="Compare" runat="server" ErrorMessage="Re-Password Not Match Password" ControlToCompare="txt_newPassword" ControlToValidate="txt_reNewPassowrd" CssClass="passwordCom" ></asp:CompareValidator>
+                  <asp:TextBox runat="server" ID="txt_oldP" placeholder="Old Passowrd" TextMode="Password" />
+                  <asp:TextBox runat="server" ID="txt_newPassword" placeholder="New Password" TextMode="Password"/>
+                  <asp:TextBox runat="server" ID="txt_reNewPassowrd" placeholder="New Re-Password" TextMode="Password"/>
+                 <asp:Button runat="server" ID="btn_change2" Text="Change" CommandName="password" OnCommand="MakeChange_Command"/>
+            </div>
+            
+             <div class="change-name hide3">
+                <h4>Do You Want To Make Change In Avatar: </h4>
+                 <asp:Button runat="server" ID="changeAvatar" Text="Change" OnClick="btn_Avatar_Click" style="display:block; margin: 20px auto" />                
+                <input type="submit" value="Dismiss" class="dismiss" style="background-color: #f44336; margin: 20px auto; display:block" />
+            </div>
+        </div>
+    </div>
+    <asp:Label runat="server" ID="lbl_error" class="error hide">There Is an Error</asp:Label>
+
+
+
+    <!-- End Settigns Extend -->
+
+         <%-- Loading  --%>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+               
+    </form>
+
+    <!-- Start Footer -->
+    <div class="footer" tabindex="-1">
+        <i class="fas fa-graduation-cap"></i>
+        made by student in <span><a tabindex="-1" href="https://www.ipa.edu.sa/ar-sa/Pages/default.aspx"
+                target="_blank">IPA</a></span>
+        <i class="fas fa-university"></i>
+        <div class="icons">
+           <ul>
+              <li> <a href="https://www.linkedin.com/in/faris-buri-608525211/"><i class="fab fa-linkedin"></i></a></li>
+              <li> <a href="https://github.com/FarisBuri"><i class="fab fa-github-square"></i></a></li>
+                <li><a href="mailto:farisburi@gmail.com">  <i class="fas fa-envelope"></i></a></li>
+           </ul>
+        </div>
+
+    </div>
+
+    <!-- End Footer -->
+
+
+    <!-- Java Scritp -->
+    <script>
+        let links = document.querySelector("header .container .links li:last-child a"),
+            icon = document.querySelector(".icon"),
+            mega = document.querySelector(".mega");
+
+        console.log(links);
+
+        links.onclick = (e) => {
+            e.stopPropagation();
+
+            console.log("hi");
+            mega.classList.add("open-mega");
+            mega.classList.toggle("close-mega");
+        };
+
+        document.addEventListener("click", (e) => {
+            if (e.target != mega) {
+                if (mega.classList.contains("open-mega")) {
+                    mega.classList.remove("open-mega");
+                    mega.classList.add("close-mega");
+                }
+            }
+        });
+
+        mega.onclick = (e) => {
+            e.stopPropagation();
+        };
+
+
+        // ============= up ===============
+
+        let up = document.querySelector(".up");
+
+        window.onscroll = (_) => {
+            window.scrollY > 600 ? up.classList.add("show") : up.classList.remove("show");
+        };
+
+        up.onclick = (_) => window.scrollTo(0, 0);
+        // Start Settings
+
+        // start Open Close Settigns
+        let btn_settings = document.querySelector(".open-settings"),
+            settings = document.querySelector(".settings");
+
+        btn_settings.onclick = (_) => {
+            settings.classList.toggle("left");
+            mega.classList.remove("open-mega");
+        };
+        settings.onclick = (stop) => {
+            stop.stopPropagation();
+        };
+
+        document.addEventListener("click", (event) => {
+            if (event != settings) {
+                settings.classList.remove("left");
+            }
+        });
+        // ===================== Icon Settings ===================
+
+        let local_icon_settigns = localStorage.getItem("icon-settings"),
+            settings_Icon = document.querySelector(".settings .icon"),
+            icons = document.querySelector(".settings .icon i"),
+            show = document.querySelector(".settings .show"),
+            hide = document.querySelector(".settings .hide_s");
+
+        settings_Icon.style = "display:none";
+        if (local_icon_settigns != null) {
+            if (local_icon_settigns == "true") {
+                settings_Icon.style = "display:block";
+                hide.classList.remove("open");
+                show.classList.add("open");
+            } else {
+                settings_Icon.style = "display:none";
+                hide.classList.add("open");
+                show.classList.remove("open");
+            }
+        }
+
+        show.onclick = (_) => {
+            localStorage.setItem("icon-settings", "true");
+            hide.classList.remove("open");
+            show.classList.add("open");
+            settings_Icon.style = "display:block";
+        };
+        hide.onclick = (_) => {
+            localStorage.setItem("icon-settings", "false");
+            hide.classList.add("open");
+            show.classList.remove("open");
+            settings_Icon.style = "display:none";
+        };
+        settings_Icon.onclick = (_) => {
+            icons.classList.toggle("fa-spin");
+            settings.classList.toggle("left");
+        };
+
+        document.addEventListener("click", (event) => {
+            if (event != settings) {
+                icons.classList.remove("fa-spin");
+            }
+        });
+
+        btn_settings.onclick = (_) => {
+            settings.classList.toggle("left");
+            mega.classList.remove("open-mega");
+            icons.classList.add("fa-spin");
+        };
+
+
+        
+        
+        // ==================== Settings Extend ==========================
+
+        let spanHide = document.querySelector(".change span"),
+            fatherChange = document.querySelector(".overlay"),
+            sonChange = document.querySelector(".overlay .change"),
+            changeType0 = document.querySelector(".change .hide0"),
+            changeType1 = document.querySelector(".change .hide1"),
+            changeType2 = document.querySelector(".change .hide2"),
+            changeType3 = document.querySelector(".change .hide3"),
+            changeNames = document.querySelector(".come li:first-child"),
+            changeUsername = document.querySelector(".come li:nth-child(2)"),
+            changePassword = document.querySelector(".come li:nth-child(3)"),
+            changeAvatar = document.querySelector(".come li:nth-child(4)"),
+            dismissAvatar = document.querySelector(".dismiss");
+        ClickChangeAvatar = document.querySelector(".ClickChangeAvatar");
+        lbl_pictrueAvaatar = document.querySelector("#lbl_pictrue");
+            error = document.querySelector(".error");
+        console.log(changeUsername);
+        console.log(changePassword);
+        changeNames.onclick = (_) => {
+            fatherChange.classList.remove("hide");
+            sonChange.classList.remove("hide");
+            changeType0.classList.remove("hide0");
+            sonChange.classList.remove("change-password");
+            sonChange.classList.remove("change-username");
+            sonChange.classList.remove("change-avatar");
+        };
+        changeUsername.onclick = (_) => {
+            fatherChange.classList.remove("hide");
+            sonChange.classList.remove("hide");
+            changeType1.classList.remove("hide1");
+            sonChange.classList.remove("change-password");
+            sonChange.classList.add("change-username");
+            sonChange.classList.remove("change-avatar");
+        };
+        changePassword.onclick = (_) => {
+            fatherChange.classList.remove("hide");
+            sonChange.classList.remove("hide");
+            sonChange.classList.add("change-password");
+            changeType2.classList.remove("hide2");
+            sonChange.classList.remove("change-username");
+            sonChange.classList.remove("change-avatar");
+
+        };
+        changeAvatar.onclick = (_) => {
+
+                file_upload_picture.click();
+            setTimeout(function () {
+                fatherChange.classList.remove("hide");
+                sonChange.classList.remove("hide");
+                sonChange.classList.remove("change-password");
+                changeType3.classList.remove("hide3");
+                sonChange.classList.remove("change-username");
+                sonChange.classList.add("change-avatar");
+            }, 1000);
+            
+            
+            
+        };
+
+        lbl_pictrueAvaatar.onclick = _ => {
+            changeAvatar.click();
+        }
+        document.addEventListener("click", (e) => {
+            if (e.target != sonChange) {
+                fatherChange.classList.add("hide");
+                sonChange.classList.add("hide");
+                changeType0.classList.add("hide0");
+                changeType1.classList.add("hide1");
+                changeType2.classList.add("hide2");
+                changeType3.classList.add("hide3");
+                error.classList.add("hide");
+            }
+        });
+        spanHide.onclick = (_) => {
+            fatherChange.classList.add("hide");
+            sonChange.classList.add("hide");
+            changeType0.classList.add("hide0");
+            changeType1.classList.add("hide1");
+            changeType2.classList.add("hide2");
+            changeType3.classList.add("hide3");
+            error.classList.add("hide");
+        };
+        dismissAvatar.onclick = (_) => {
+            fatherChange.classList.add("hide");
+            sonChange.classList.add("hide");
+            changeType0.classList.add("hide0");
+            changeType1.classList.add("hide1");
+            changeType2.classList.add("hide2");
+            changeType3.classList.add("hide3");
+            error.classList.add("hide");
+        }
+
+
+        sonChange.onclick = (e) => e.stopPropagation();
+// End Settings
+
+        // ============================= Image ===============================
+        let image_move = setInterval(movePicture, 10000);
+        let finally_move = localStorage.getItem("moves");
+        // buttons
+        let btn_active = document.querySelector(".active"),
+            btn_passive = document.querySelector(".passive"),
+            btn_rest = document.querySelector(".rest");
+
+        btn_rest.onclick = (_) => {
+            localStorage.clear();
+            location.reload();
+        };
+
+        if (finally_move != null) {
+            if (finally_move == "false") {
+                btn_passive.classList.add("open");
+                btn_active.classList.remove("open");
+                clearInterval(image_move);
+            } else {
+                btn_passive.classList.remove("open");
+                btn_active.classList.add("open");
+                image_move = setInterval(movePicture, 10000);
+            }
+        }
+
+        btn_active.onclick = (_) => {
+            btn_passive.classList.remove("open");
+            btn_active.classList.add("open");
+            image_move = setInterval(movePicture, 10000);
+            localStorage.setItem("moves", "true");
+        };
+        btn_passive.onclick = (_) => {
+            clearInterval(image_move);
+            btn_active.classList.remove("open");
+            btn_passive.classList.add("open");
+            localStorage.setItem("moves", "false");
+        };
+
+
+
+    </script>
+   
+
+</body>
+</html>

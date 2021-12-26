@@ -1,0 +1,509 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91494A38-DB8A-460A-B619-C3BCFCDF581B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IPA_Coffee</RootNamespace>
+    <AssemblyName>IPA_Coffee</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44362</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=3.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.6.0\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\IPA_Coffee_db.mdf" />
+    <Content Include="App_Data\IPA_Coffee_db_log.ldf">
+      <DependentUpon>IPA_Coffee_db.mdf</DependentUpon>
+    </Content>
+    <Content Include="CSS_\normlize.css" />
+    <Content Include="favicon0\about.txt" />
+    <Content Include="favicon0\android-chrome-192x192.png" />
+    <Content Include="favicon0\android-chrome-512x512.png" />
+    <Content Include="favicon0\apple-touch-icon.png" />
+    <Content Include="favicon0\favicon-16x16.png" />
+    <Content Include="favicon0\favicon-32x32.png" />
+    <Content Include="favicon0\favicon.ico" />
+    <Content Include="image1\add1.png" />
+    <Content Include="image1\avatar2.bmp" />
+    <Content Include="image1\aziz0.jpeg" />
+    <Content Include="image1\bgC.jpg" />
+    <Content Include="image1\bgC1.jpg" />
+    <Content Include="image1\bgC2.jpg" />
+    <Content Include="image1\bgR.jpg" />
+    <Content Include="image1\c1.jpg" />
+    <Content Include="image1\c2.jpg" />
+    <Content Include="image1\c4.jpg" />
+    <Content Include="image1\c5.jpg" />
+    <Content Include="image1\c6.jpg" />
+    <Content Include="image1\card-visa.png" />
+    <Content Include="image1\Coffee.jpg" />
+    <Content Include="image1\coffeeshop4.jpg" />
+    <Content Include="image1\cohee.bmp" />
+    <Content Include="image1\cold1.jpg" />
+    <Content Include="image1\cold2.jpg" />
+    <Content Include="image1\cold3.jpg" />
+    <Content Include="image1\cold4.jpg" />
+    <Content Include="image1\cold5.png" />
+    <Content Include="image1\contact.jpg" />
+    <Content Include="image1\createOrder.jpg" />
+    <Content Include="image1\CreateOrder2.jpg" />
+    <Content Include="image1\easy.png" />
+    <Content Include="image1\European-Specialty-Coffee-Market-by-Pointbleu-Design-Blog.jpg" />
+    <Content Include="image1\fixed.png" />
+    <Content Include="image1\forget1.jpg" />
+    <Content Include="image1\h.png" />
+    <Content Include="image1\hot1.jpg" />
+    <Content Include="image1\hot2.jpg" />
+    <Content Include="image1\hot3.jpg" />
+    <Content Include="image1\hot4.png" />
+    <Content Include="image1\land1.jpg" />
+    <Content Include="image1\land2.jpg" />
+    <Content Include="image1\land3.jpg" />
+    <Content Include="image1\land4.jpg" />
+    <Content Include="image1\m1.jpeg" />
+    <Content Include="image1\memory\1.jpg" />
+    <Content Include="image1\memory\10.jpg" />
+    <Content Include="image1\memory\11.jpg" />
+    <Content Include="image1\memory\12.jpg" />
+    <Content Include="image1\memory\13.jpg" />
+    <Content Include="image1\memory\15.jpg" />
+    <Content Include="image1\memory\16.jpg" />
+    <Content Include="image1\memory\17.jpg" />
+    <Content Include="image1\memory\18.jpg" />
+    <Content Include="image1\memory\19.jpg" />
+    <Content Include="image1\memory\2.jpg" />
+    <Content Include="image1\memory\3.jpg" />
+    <Content Include="image1\memory\4.jpg" />
+    <Content Include="image1\memory\5.jpg" />
+    <Content Include="image1\memory\6.jpg" />
+    <Content Include="image1\memory\7.jpg" />
+    <Content Include="image1\memory\8.jpg" />
+    <Content Include="image1\memory\a1.jpeg" />
+    <Content Include="image1\memory\a2.jpeg" />
+    <Content Include="image1\memory\a3.jpeg" />
+    <Content Include="image1\memory\a4.jpeg" />
+    <Content Include="image1\memory\big.jpg" />
+    <Content Include="image1\memory\big1.jpeg" />
+    <Content Include="image1\memory\big2.jpeg" />
+    <Content Include="image1\memory\big3.jpeg" />
+    <Content Include="image1\memory\big4.jpeg" />
+    <Content Include="image1\memory\big5.jpeg" />
+    <Content Include="image1\O1.jpg" />
+    <Content Include="image1\osama.jpeg" />
+    <Content Include="image1\osama.png" />
+    <Content Include="image1\shop3.jpg" />
+    <Content Include="image1\Test1.bmp" />
+    <Content Include="image1\test2.jpg" />
+    <Content Include="image1\type1.jpg" />
+    <Content Include="image1\type11.jpg" />
+    <Content Include="image1\type2.jpg" />
+    <Content Include="image1\type22.jpg" />
+    <Content Include="image1\type3.bmp" />
+    <Content Include="image1\WhatsApp Image 2021-11-09 at 8.22.32 AM.jpeg" />
+    <Content Include="image1\work1.png" />
+    <Content Include="image1\work2.png" />
+    <Content Include="image1\work3.png" />
+    <Content Include="image1\work4.png" />
+    <Content Include="image1\work5.png" />
+    <Content Include="js\Master.js" />
+    <Content Include="lib\font-awesome\css\all.css" />
+    <Content Include="lib\font-awesome\css\all.min.css" />
+    <Content Include="lib\font-awesome\css\brands.css" />
+    <Content Include="lib\font-awesome\css\brands.min.css" />
+    <Content Include="lib\font-awesome\css\fontawesome.css" />
+    <Content Include="lib\font-awesome\css\fontawesome.min.css" />
+    <Content Include="lib\font-awesome\css\regular.css" />
+    <Content Include="lib\font-awesome\css\regular.min.css" />
+    <Content Include="lib\font-awesome\css\solid.css" />
+    <Content Include="lib\font-awesome\css\solid.min.css" />
+    <Content Include="lib\font-awesome\css\svg-with-js.css" />
+    <Content Include="lib\font-awesome\css\svg-with-js.min.css" />
+    <Content Include="lib\font-awesome\css\v4-shims.css" />
+    <Content Include="lib\font-awesome\css\v4-shims.min.css" />
+    <Content Include="lib\font-awesome\js\all.js" />
+    <Content Include="lib\font-awesome\js\all.min.js" />
+    <Content Include="lib\font-awesome\js\brands.js" />
+    <Content Include="lib\font-awesome\js\brands.min.js" />
+    <Content Include="lib\font-awesome\js\conflict-detection.js" />
+    <Content Include="lib\font-awesome\js\conflict-detection.min.js" />
+    <Content Include="lib\font-awesome\js\fontawesome.js" />
+    <Content Include="lib\font-awesome\js\fontawesome.min.js" />
+    <Content Include="lib\font-awesome\js\regular.js" />
+    <Content Include="lib\font-awesome\js\regular.min.js" />
+    <Content Include="lib\font-awesome\js\solid.js" />
+    <Content Include="lib\font-awesome\js\solid.min.js" />
+    <Content Include="lib\font-awesome\js\v4-shims.js" />
+    <Content Include="lib\font-awesome\js\v4-shims.min.js" />
+    <Content Include="lib\font-awesome\sprites\brands.svg" />
+    <Content Include="lib\font-awesome\sprites\regular.svg" />
+    <Content Include="lib\font-awesome\sprites\solid.svg" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Drink.aspx" />
+    <Content Include="Admin.aspx" />
+    <Content Include="Create_Order.aspx" />
+    <Content Include="Drink2.aspx" />
+    <Content Include="Cart.aspx" />
+    <Content Include="MyOwnWork\font-awesome\css\all.css" />
+    <Content Include="MyOwnWork\font-awesome\css\all.min.css" />
+    <Content Include="MyOwnWork\font-awesome\css\brands.css" />
+    <Content Include="MyOwnWork\font-awesome\css\brands.min.css" />
+    <Content Include="MyOwnWork\font-awesome\css\fontawesome.css" />
+    <Content Include="MyOwnWork\font-awesome\css\fontawesome.min.css" />
+    <Content Include="MyOwnWork\font-awesome\css\regular.css" />
+    <Content Include="MyOwnWork\font-awesome\css\regular.min.css" />
+    <Content Include="MyOwnWork\font-awesome\css\solid.css" />
+    <Content Include="MyOwnWork\font-awesome\css\solid.min.css" />
+    <Content Include="MyOwnWork\font-awesome\css\svg-with-js.css" />
+    <Content Include="MyOwnWork\font-awesome\css\svg-with-js.min.css" />
+    <Content Include="MyOwnWork\font-awesome\css\v4-shims.css" />
+    <Content Include="MyOwnWork\font-awesome\css\v4-shims.min.css" />
+    <Content Include="MyOwnWork\font-awesome\js\all.js" />
+    <Content Include="MyOwnWork\font-awesome\js\all.min.js" />
+    <Content Include="MyOwnWork\font-awesome\js\brands.js" />
+    <Content Include="MyOwnWork\font-awesome\js\brands.min.js" />
+    <Content Include="MyOwnWork\font-awesome\js\conflict-detection.js" />
+    <Content Include="MyOwnWork\font-awesome\js\conflict-detection.min.js" />
+    <Content Include="MyOwnWork\font-awesome\js\fontawesome.js" />
+    <Content Include="MyOwnWork\font-awesome\js\fontawesome.min.js" />
+    <Content Include="MyOwnWork\font-awesome\js\regular.js" />
+    <Content Include="MyOwnWork\font-awesome\js\regular.min.js" />
+    <Content Include="MyOwnWork\font-awesome\js\solid.js" />
+    <Content Include="MyOwnWork\font-awesome\js\solid.min.js" />
+    <Content Include="MyOwnWork\font-awesome\js\v4-shims.js" />
+    <Content Include="MyOwnWork\font-awesome\js\v4-shims.min.js" />
+    <Content Include="MyOwnWork\font-awesome\sprites\brands.svg" />
+    <Content Include="MyOwnWork\font-awesome\sprites\regular.svg" />
+    <Content Include="MyOwnWork\font-awesome\sprites\solid.svg" />
+    <Content Include="MyOwnWork\font-awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="MyOwnWork\font-awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="MyOwnWork\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="MyOwnWork\normalize\normalize.css" />
+    <Content Include="MyOwnWork\normalize\normalize.min.css" />
+    <Content Include="MyOwnWork\Template-1\css\all.min.css" />
+    <Content Include="MyOwnWork\Template-1\css\leon.css" />
+    <Content Include="MyOwnWork\Template-1\css\nomrlize.css" />
+    <Content Include="MyOwnWork\Template-1\images\2808.jpg" />
+    <Content Include="MyOwnWork\Template-1\images\686998.jpg" />
+    <Content Include="MyOwnWork\Template-1\images\computer-laptop-notebook-pen-preview.jpg" />
+    <Content Include="MyOwnWork\Template-1\images\Damavand-Mountain-2.jpg" />
+    <Content Include="MyOwnWork\Template-1\images\download.jpg" />
+    <Content Include="MyOwnWork\Template-1\images\google.jpg" />
+    <Content Include="MyOwnWork\Template-1\images\How-to-Maintain-Work-with-Studying-and-Stay-Sane.jpg" />
+    <Content Include="MyOwnWork\Template-1\images\logo.bmp" />
+    <Content Include="MyOwnWork\Template-1\images\Sample-Notes.jpg" />
+    <Content Include="MyOwnWork\Template-1\images\t111_zone5_img9.png" />
+    <Content Include="MyOwnWork\Template-1\index.html" />
+    <Content Include="MyOwnWork\Template-2\css\all.min.css" />
+    <Content Include="MyOwnWork\Template-2\css\kasper.css" />
+    <Content Include="MyOwnWork\Template-2\css\normlize.css" />
+    <Content Include="MyOwnWork\Template-2\images\1 %281%29.jfif" />
+    <Content Include="MyOwnWork\Template-2\images\1 %281%29.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\1 %282%29.jfif" />
+    <Content Include="MyOwnWork\Template-2\images\1 %282%29.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\1 %283%29.jfif" />
+    <Content Include="MyOwnWork\Template-2\images\1 %283%29.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\1 %284%29.jfif" />
+    <Content Include="MyOwnWork\Template-2\images\1 %284%29.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\about.png" />
+    <Content Include="MyOwnWork\Template-2\images\awesome-video.mp4" />
+    <Content Include="MyOwnWork\Template-2\images\capture_20210823003552143.bmp" />
+    <Content Include="MyOwnWork\Template-2\images\download.png" />
+    <Content Include="MyOwnWork\Template-2\images\ggg.jfif" />
+    <Content Include="MyOwnWork\Template-2\images\keyboard.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\logo.png" />
+    <Content Include="MyOwnWork\Template-2\images\owl.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\phones.png" />
+    <Content Include="MyOwnWork\Template-2\images\quote.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\shuffle-01.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\shuffle-02.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\shuffle-03.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\shuffle-04.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\shuffle-05.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\shuffle-06.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\shuffle-07.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\shuffle-08.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\skills-01.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\skills-02.jpg" />
+    <Content Include="MyOwnWork\Template-2\images\stats.png" />
+    <Content Include="MyOwnWork\Template-2\images\subscribe.jpg" />
+    <Content Include="MyOwnWork\Template-2\index.html" />
+    <Content Include="Orders.aspx" />
+    <Content Include="favicon0\site.webmanifest" />
+    <Content Include="Forget_Password.aspx" />
+    <Content Include="Create_Employee.aspx" />
+    <Content Include="Check_Out.aspx" />
+    <Content Include="Employee.aspx" />
+    <Content Include="Payments.aspx" />
+    <Content Include="Contact_Us.aspx" />
+    <Content Include="Student.aspx" />
+    <Content Include="MyOwnWork\font-awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="MyOwnWork\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="MyOwnWork\font-awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="MyOwnWork\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="MyOwnWork\font-awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="MyOwnWork\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="MyOwnWork\font-awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="MyOwnWork\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="MyOwnWork\font-awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="MyOwnWork\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="MyOwnWork\font-awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="MyOwnWork\font-awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="MyOwnWork\normalize\normalize.min.css.map" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Home.aspx" />
+    <Content Include="Sign_in.aspx" />
+    <Content Include="Sign_Up.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cart.cs" />
+    <Compile Include="customer.cs" />
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="orders.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sign_in.aspx.cs">
+      <DependentUpon>Sign_in.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sign_in.aspx.designer.cs">
+      <DependentUpon>Sign_in.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sign_Up.aspx.cs">
+      <DependentUpon>Sign_Up.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sign_Up.aspx.designer.cs">
+      <DependentUpon>Sign_Up.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Drink.aspx.cs">
+      <DependentUpon>Drink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Drink.aspx.designer.cs">
+      <DependentUpon>Drink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Create_Order.aspx.cs">
+      <DependentUpon>Create_Order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create_Order.aspx.designer.cs">
+      <DependentUpon>Create_Order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Drink2.aspx.cs">
+      <DependentUpon>Drink2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Drink2.aspx.designer.cs">
+      <DependentUpon>Drink2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orders.aspx.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orders.aspx.designer.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forget_Password.aspx.cs">
+      <DependentUpon>Forget_Password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forget_Password.aspx.designer.cs">
+      <DependentUpon>Forget_Password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Create_Employee.aspx.cs">
+      <DependentUpon>Create_Employee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create_Employee.aspx.designer.cs">
+      <DependentUpon>Create_Employee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Check_Out.aspx.cs">
+      <DependentUpon>Check_Out.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Check_Out.aspx.designer.cs">
+      <DependentUpon>Check_Out.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.aspx.cs">
+      <DependentUpon>Employee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee.aspx.designer.cs">
+      <DependentUpon>Employee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payments.aspx.cs">
+      <DependentUpon>Payments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payments.aspx.designer.cs">
+      <DependentUpon>Payments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact_Us.aspx.cs">
+      <DependentUpon>Contact_Us.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact_Us.aspx.designer.cs">
+      <DependentUpon>Contact_Us.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student.aspx.cs">
+      <DependentUpon>Student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student.aspx.designer.cs">
+      <DependentUpon>Student.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Main.Master" />
+    <Content Include="libman.json" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51781</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44362/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
