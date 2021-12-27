@@ -5,6 +5,10 @@
     {
       "library": "font-awesome@5.15.4",
       "destination": "MyOwnWork/font-awesome/"
+    },
+    {
+      "library": "normalize@8.0.1",
+      "destination": "MyOwnWork/normalize/"
     }
   ]
 }

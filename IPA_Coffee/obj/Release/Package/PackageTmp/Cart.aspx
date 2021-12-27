@@ -314,7 +314,7 @@ header .container .sub-links:last-of-type > li:nth-of-type(1) > span::after {
                     </Columns>
                 </asp:GridView>
 
-                5<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" DeleteCommand="DELETE FROM [cart] WHERE [cart_name] = @cart_name" InsertCommand="INSERT INTO [cart] ([cart_img], [cart_category], [cart_price], [cart_details], [cart_name], [quantity], [userName]) VALUES (@cart_img, @cart_category, @cart_price, @cart_details, @cart_name, @quantity, @userName)" SelectCommand="SELECT * FROM [cart] WHERE ([userName] = @userName)" UpdateCommand="UPDATE [cart] SET [cart_img] = @cart_img, [cart_category] = @cart_category, [cart_price] = @cart_price, [cart_details] = @cart_details, [quantity] = @quantity, [userName] = @userName WHERE [cart_name] = @cart_name">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" DeleteCommand="DELETE FROM [cart] WHERE [cart_name] = @cart_name" InsertCommand="INSERT INTO [cart] ([cart_img], [cart_category], [cart_price], [cart_details], [cart_name], [quantity], [userName]) VALUES (@cart_img, @cart_category, @cart_price, @cart_details, @cart_name, @quantity, @userName)" SelectCommand="SELECT * FROM [cart] WHERE ([userName] = @userName)" UpdateCommand="UPDATE [cart] SET [cart_img] = @cart_img, [cart_category] = @cart_category, [cart_price] = @cart_price, [cart_details] = @cart_details, [quantity] = @quantity, [userName] = @userName WHERE [cart_name] = @cart_name">
                     <DeleteParameters>
                         <asp:Parameter Name="cart_name" Type="String" />
                     </DeleteParameters>

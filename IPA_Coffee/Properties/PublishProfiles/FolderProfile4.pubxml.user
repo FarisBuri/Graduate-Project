@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\ix_SNICKERS_xi\Documents\IPA Last Semester\Project  2\IPA_Pro</_PublishTargetUrl>
-    <History>True|2021-12-25T11:15:57.4695455Z;True|2021-12-21T17:47:58.4126596+03:00;True|2021-12-16T14:18:55.3700286+03:00;True|2021-12-15T11:14:06.6363635+03:00;True|2021-12-14T06:10:21.0770025+03:00;True|2021-12-14T05:52:41.5042176+03:00;True|2021-12-09T00:07:54.6964053+03:00;True|2021-12-08T23:40:33.1994206+03:00;True|2021-12-06T03:03:43.4978996+03:00;True|2021-12-06T02:43:46.1708758+03:00;True|2021-12-06T02:09:05.1036433+03:00;</History>
+    <History>True|2021-12-27T10:13:51.6708887Z;True|2021-12-27T13:09:09.5296896+03:00;True|2021-12-25T14:15:57.4695455+03:00;True|2021-12-21T17:47:58.4126596+03:00;True|2021-12-16T14:18:55.3700286+03:00;True|2021-12-15T11:14:06.6363635+03:00;True|2021-12-14T06:10:21.0770025+03:00;True|2021-12-14T05:52:41.5042176+03:00;True|2021-12-09T00:07:54.6964053+03:00;True|2021-12-08T23:40:33.1994206+03:00;True|2021-12-06T03:03:43.4978996+03:00;True|2021-12-06T02:43:46.1708758+03:00;True|2021-12-06T02:09:05.1036433+03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Admin.aspx">
@@ -21,10 +21,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/26/2021 09:21:40</publishTime>
     </File>
     <File Include="bin/IPA_Coffee.dll">
-      <publishTime>12/25/2021 14:15:56</publishTime>
+      <publishTime>12/27/2021 13:09:09</publishTime>
     </File>
     <File Include="bin/IPA_Coffee.pdb">
-      <publishTime>12/25/2021 14:15:56</publishTime>
+      <publishTime>12/27/2021 13:09:09</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>09/05/2018 16:10:50</publishTime>
@@ -177,7 +177,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/08/2018 12:18:16</publishTime>
     </File>
     <File Include="Cart.aspx">
-      <publishTime>12/07/2021 05:58:11</publishTime>
+      <publishTime>12/27/2021 13:08:10</publishTime>
     </File>
     <File Include="Check_Out.aspx">
       <publishTime>12/04/2021 03:50:19</publishTime>
@@ -615,10 +615,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/02/2021 10:29:04</publishTime>
     </File>
     <File Include="libman.json">
-      <publishTime>12/25/2021 14:08:55</publishTime>
+      <publishTime>12/25/2021 14:17:38</publishTime>
     </File>
     <File Include="Main.Master">
-      <publishTime>12/21/2021 17:45:23</publishTime>
+      <publishTime>12/27/2021 13:13:38</publishTime>
     </File>
     <File Include="MyOwnWork/font-awesome/css/all.css">
       <publishTime>12/25/2021 14:08:55</publishTime>
